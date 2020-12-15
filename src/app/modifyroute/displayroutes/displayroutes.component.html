@@ -1,0 +1,78 @@
+<div class="panel panel-default">
+<div class="panel-body">
+<button  class="btn btn-success" [routerLink]="['../modifyRoute']" style="margin-left: 10px;">Back</button>
+<table class="table table-hover"   >
+    <thead>
+      <tr>
+        <th scope="col">Route Id</th>
+        <th scope="col">Source</th>
+        <th scope="col">Destination</th>
+        <th scope="col">Route Fare</th>
+        <th scope="col">Update Route</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let r of routeList">
+        <th>{{r.routeId}}</th>
+        <td>{{r.source}}</td>
+        <td>{{r.destination}}</td>
+        <td>{{r.routeFare}}</td>
+        <td>
+          <button  [routerLink]="['../updateroutes']" [queryParams]="{id:r.routeId}" class='btn btn-info'>Update</button> 
+      </td>
+      </tr>
+    </tbody>
+</table>
+ </div>
+</div>
+
+ <!-- <div class="modal" id="myModal">  
+  <div class="modal-dialog">  
+    <div class="modal-content">  
+          <form [formGroup]="updateRouteform" #updobj (ngSubmit)="updateRou(updobj)">  
+  
+      <div class="modal-header">  
+        <h4 class="modal-title" style="text-align: center">Update Route</h4>  
+          
+      </div> 
+
+      <div class="modal-body" *ngFor="let r1 of routeList " >  
+        <div [hidden]="updated">  
+
+            <input type="hidden" class="form-control"  formControlName="routeId" [(ngModel)]="r1.routeId">  
+                    <div class="form-group">  
+                        <label for="name">Source</label>  
+                        <input type="text" class="form-control"  formControlName="source" [(ngModel)]="r1.source" disabled  >  
+                    </div>  
+              
+                    <div class="form-group">  
+                        <label for="name">Destination</label>  
+                        <input type="text" class="form-control" formControlName="destination" [(ngModel)]="r1.destination" disabled>  
+                    </div>  
+              
+                    <div class="form-group">  
+                      <label for="name">Route Fare</label>  
+                      <input type="text" class="form-control" formControlName="routeFare" [(ngModel)]="r1.routeFare">                                
+                    </div>                     
+          </div>    
+          <div [hidden]="!updated">  
+              <h4>Route Updated!</h4>  
+          </div> 
+
+              
+    </div> 
+    <div class="modal-footer" >  
+      <button type="submit" class="btn btn-success" [hidden]="updated">Update</button>  
+      <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="changeisUpdated()">Close</button>  
+    </div>
+  </form>
+  </div>
+  </div>
+  </div> -->
+
+ 
+
+
+
+

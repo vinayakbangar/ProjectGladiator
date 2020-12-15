@@ -1,0 +1,42 @@
+<h3>Cancel Ticket</h3>
+<div  style= "align-content:center;" >
+<div  style="width: 400px;">
+    <form (ngSubmit)="getTicket(tid)">
+
+        <div class="form-group">
+            <label for="name">Ticket Id</label>
+            <input type="text" class="form-control" id="tid" required [(ngModel)]="tid" name="ticketId">
+        </div>
+        <button type="submit" class="btn btn-success">Get Ticket</button>
+    </form>
+</div>
+</div>
+
+<div class="panel panel-default">
+    <div class="panel-body">
+    <table class="table table-hover"   >
+        <thead>
+          <tr>
+            <th scope="col">Ticket Id</th>
+            <th scope="col">Source</th>
+            <th scope="col">Destination</th>
+            <th scope="col">Route Fare</th>
+            <th scope="col">Departure Date & Time</th>
+            <th scope="col">Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr>
+            <th>{{ticket.ticketId}}</th>
+            <td>{{ticket.timetable.route.source}}</td>
+            <td>{{ticket.timetable.route.destination}}</td>
+            <td>{{ticket.fare}}</td>
+            <td>{{ticket.timetable.departureDateTime| date:'medium'}}</td>
+            <td>
+              <button (click)="deleteTicket(ticket.ticketId)" class='btn btn-info'>Cancel</button> 
+          </td>
+          </tr>
+        </tbody>
+    </table>
+     </div>
+    </div>

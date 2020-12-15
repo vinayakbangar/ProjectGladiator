@@ -1,0 +1,32 @@
+<app-header></app-header>
+<!DOCTYPE html>
+<html>
+<head>
+<title>Reset-Password</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div class="row">
+    <div class="col-md-6 offset-md-3 mt-4">
+        <h3>Reset Password</h3>
+        <form [formGroup] = "resetPwd" (ngSubmit)="sendMail();">
+
+            <div class="form-group">
+                <label for="email">Enter your E-mail ID</label>
+                <input type="email"
+                formControlName="Email"
+                       class="form-control"
+                       id="Email"
+                       placeholder="E-mail ID"  required>
+            </div>
+
+            <button type="submit"
+                    class="btn btn-primary">Reset Password <i class="fa fa-paper-plane"></i></button>
+            <!-- <button type="submit"><a href="/new-password" class="btn-btn-primary">Reset Password</a><i class="fa fa-paper-plane"></i></button> -->
+        </form>
+        <p></p>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+<div class="container">
+  <div class="main-body">
+  
+  <form>
+        <div class="row gutters-sm">
+          <div class="col-md-4 mb-2">
+            <div class="card">
+              <div class="card-body">
+                <div class="d-flex flex-column align-items-center text-center">
+                  <img src="https://bootdey.com/img/Content/avatar/avatar7.png" alt="Admin" class="rounded-circle" width="150">
+                  <div class="mt-3">
+                    <h4>{{user.firstName+" "+user.lastName}}</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="card mb-3">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">First Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <div class="form-group">
+                      <!-- <label for="name">Source</label> -->
+                      <input type="text" class="form-control" id="firstName" required [(ngModel)]="user.firstName" name="firstName" disabled>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Last Name</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                  <div class="form-group">
+                      <!-- <label for="name">Source</label> -->
+                      <input type="text" class="form-control" id="lastName" required [(ngModel)]="user.lastName" name="lastName" disabled>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Email Address</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                  <div class="form-group">
+                      <!-- <label for="name">Source</label> -->
+                      <input type="text" class="form-control" id="email" required [(ngModel)]="user.email" name="email" disabled>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Contact Number</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <div class="form-group">
+                      <!-- <label for="name">Source</label> -->
+                      <input type="text" class="form-control" id="contactNumber" required [(ngModel)]="user.contactNumber" name="contactNumber">
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Birth Date</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <div class="form-group">
+                      <!-- <label for="name">Source</label> -->
+                      <input type="text" class="form-control" id="dateOfBirth" required [(ngModel)]="user.dateOfBirth" name="dateOfBirth" disabled>
+                    </div> 
+                  </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Gender</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <div class="form-group">
+                      <!-- <label for="name">Source</label> -->
+                      <input type="text" class="form-control" id="gender" required [(ngModel)]="user.gender" name="gender" disabled>
+                    </div> 
+                  </div>
+                </div>
+                <hr>
+
+                <div class="row">
+                  <div class="col-sm-3">
+                    <h6 class="mb-0">Wallet</h6>
+                  </div>
+                  <div class="col-sm-9 text-secondary">
+                    <div class="form-group">
+                      <!-- <label for="name">Source</label> -->
+                      <input type="text" class="form-control" id="wallet" required [(ngModel)]="user.wallet" name="wallet" disabled>
+                    </div> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+  </form>
+      </div>
+  </div>
+
+  <button (click)="updateUser()">save</button>
+

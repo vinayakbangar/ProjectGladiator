@@ -1,0 +1,15 @@
+<h3>Give Feedback</h3>
+<div  style= "align-content:center;" >
+<div [hidden]="submitted" style="width: 400px;">
+    <form (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Feedback</label>
+            <input type="text" class="form-control" id="feedbackReceived" required [(ngModel)]="feedback.feedbackReceived" name="feedbackReceived">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+<!-- <div [hidden]="!submitted">
+    <h5>We received your feedback Thankyou!</h5>
+</div> -->
+</div>

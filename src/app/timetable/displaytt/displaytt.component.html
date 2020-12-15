@@ -1,0 +1,37 @@
+
+<div class="panel panel-default">
+    <div class="panel-body">
+    <button  class="btn btn-success" [routerLink]="['../timetable']" style="margin-left: 10px;">Back</button>
+    <table class="table table-hover"   >
+        <thead>
+          <tr>
+            <th scope="col">TimeTable Id</th>
+            <th scope="col">Departure Date & Time</th>
+            <th scope="col">Bus Number</th>
+            <th scope="col">Driver Id</th>
+            <th scope="col">Route Id</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let r of timetable">
+            <th>{{r.timetableId}}</th>
+            <td>{{r.departureDateTime| date:'medium'}}</td>
+            <td>{{r.bus.busNo}}</td>
+            <td>{{r.driver.driverId}}</td>
+            <td>{{r.route.routeId}}</td>
+            <td>
+              <button  [routerLink]="['../updatett']" [queryParams]="{id:r.timetableId}" class='btn btn-info'>Update</button> 
+          </td>
+          </tr>
+        </tbody>
+    </table>
+     </div>
+    </div>
+    
+    
+     
+    
+    
+    
+    
+    

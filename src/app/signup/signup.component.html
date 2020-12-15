@@ -1,0 +1,106 @@
+<app-header></app-header>
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
+<title>Sign-Up</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+
+<div class="signup-form">
+    <form [formGroup]="signUpForm" (ngSubmit)="onSubmit()">
+		<h2>Sign Up</h2>
+		<p>Please fill in this form to create an account!</p>
+		<hr>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-paper-plane"></i></span>
+				<input type="email" class="form-control" formControlName="email" id="email" placeholder="Email">											
+        <div *ngIf="submitted && signUpForm.controls.email.errors" class="error">											
+          <div class="text-danger" *ngIf="signUpForm.controls.email.errors.required">Email is required</div>											
+		</div> 
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-lock"></i></span>
+				<input type="password" class="form-control" formControlName="password" id="password" placeholder="Password">											
+        <div *ngIf="submitted && signUpForm.controls.password.errors" class="error">											
+          <div class="text-danger" *ngIf="signUpForm.controls.password.errors.required">Password is required</div>											
+        </div>				
+			</div>
+        </div>
+		<div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i class="fa fa-lock"></i>
+					<i class="fa fa-check"></i>
+				</span>
+				<input type="password" class="form-control" formControlName="confirmpassword" id="confirmpassword" placeholder="Confirm Password">											
+				<div *ngIf="submitted && signUpForm.controls.confirmpassword.errors" class="error">											
+				  <div class="text-danger" *ngIf="signUpForm.controls.confirmpassword.errors.required"> Confirm Password is required</div>											
+				</div>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-address-card"></i></span>
+				<input type="text" class="form-control" formControlName="firstName" id="firstName" placeholder="First Name">											
+			<div *ngIf="submitted && signUpForm.controls.firstName.errors" class="error">											
+				<div class="text-danger" *ngIf="signUpForm.controls.firstName.errors.required"> First Name is required</div>											
+			</div>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-address-card"></i></span>
+				<input type="text" class="form-control" formControlName="lastName" id="lastName" placeholder="Last Name">											
+			<div *ngIf="submitted && signUpForm.controls.lastName.errors" class="error">											
+				<div class="text-danger" *ngIf="signUpForm.controls.lastName.errors.required"> Last Name is required</div>											
+			</div>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+				<input type="date" class="form-control" formControlName="dateOfBirth" id="dateOfBirth" placeholder="Date Of Birth">											
+			<div *ngIf="submitted && signUpForm.controls.dateOfBirth.errors" class="error">											
+				<div class="text-danger" *ngIf="signUpForm.controls.dateOfBirth.errors.required"> Date Of Birth is required</div>											
+			</div>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon"><i class="fa fa-phone"></i></span>
+				<input type="number" class="form-control" formControlName="contactNumber" id="contactNumber" placeholder="Contact Number">											
+			<div *ngIf="submitted && signUpForm.controls.contactNumber.errors" class="error">											
+			  <div class="text-danger" *ngIf="signUpForm.controls.contactNumber.errors.required"> Contact Number is required</div>											
+			</div>
+			</div>
+        </div>
+        <div class="form-group">
+			<div class="input-group">
+                <span class="input-group-addon"><i class="fa fa-group"></i></span>
+                <input list="gender1" class="form-control" formControlName="gender" id="gender" placeholder="Gender">
+			<datalist id="gender1">
+				<option>MALE</option>
+				<option>FEMALE</option>
+				<option>OTHERS</option>
+			</datalist>											
+			<div *ngIf="submitted && signUpForm.controls.gender.errors" class="error">											
+				<div class="text-danger" *ngIf="signUpForm.controls.gender.errors.required"> Gender is required</div>
+			</div>
+			</div>
+        </div>
+
+
+        <div class="form-group">
+			<label>I accept the <a href="#">Terms of Use</a> &amp; <a href="#">Privacy Policy </a>By Sign-Up</label>
+		</div>
+		<div class="form-group">
+            <button type="submit" class="btn btn-primary btn-lg">Sign Up</button>
+		</div><br>
+		<div><p class="text-center small">Already have an account! <a href="login">login here</a>.</p></div>
+    </form>
+	
+</div>
+  

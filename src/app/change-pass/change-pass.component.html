@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Change-Password</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-6 offset-md-3 mt-4">
+            <h3>Change Password</h3>
+            <form [formGroup] = "resetPage" (ngSubmit)="changePwd();">
+                <div class="form-group">
+                    <label for="email">Enter your E-mail ID</label>
+                    <input type="email"
+                    formControlName="Email"
+                           class="form-control"
+                           id="Email"
+                           placeholder="E-mail ID" required>
+                </div>
+    
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password"
+                    formControlName="newPass"
+                           class="form-control"
+                           id="newPassword"
+                           placeholder="Enter new Password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input type="password"
+                    formControlName="confirmPass"
+                           class="form-control"
+                           id="confirmPassword"
+                           placeholder="Enter confirm Password" required >
+                </div>
+    
+                <button type="submit"
+                        class="btn btn-primary">Change Password <i class="fa fa-paper-plane"></i></button>
+                <!-- <button type="submit"><a href="/new-password" class="btn-btn-primary">Reset Password</a><i class="fa fa-paper-plane"></i></button> -->
+            </form>
+            <p></p>
+        </div>
+    </div>
+</body>
+</html>
+

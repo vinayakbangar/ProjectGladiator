@@ -1,0 +1,33 @@
+table {
+    border: 1px solid #dee2e6;
+}
+        .ticket {
+            border: 1px solid #ccc;
+    box-shadow: 1px 0px 9px 2px #ccc;
+    margin: 26px;
+        }
+        .ticket table {
+            border: none
+        }
+
+        .ticket table thead {
+            border: none;
+            background: #FCFCE0;
+            font-weight: bold
+        }
+        .ticket  table td {
+            border: none;
+        }
+
+        .ticket table.ps_details {
+            border: 1px solid #ccc;
+        }
+
+        .ticket table.ps_details span {
+            color: #424242;
+            font-size: 12px;
+            padding: 0 6px;
+        }
+        @media print{
+            .doNotPrint{display:none !important;}
+          }

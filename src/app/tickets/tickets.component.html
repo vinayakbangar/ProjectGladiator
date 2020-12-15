@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10 ticket ">
+        <strong><i class="fa fa-bus"></i>SAFAR</strong>
+          <h6 class="text-center pt-3 pb-3 "> Online Reservation</h6>
+          <table class="table ">
+     <thead>
+      <td class="text-capitalize">{{ticket.timetable.route.source}} To {{ticket.timetable.route.destination}}</td>
+      <td><strong>SAFAR</strong></td> 
+      <td>{{myDate | date: 'shortDate' }}</td>
+     
+     </thead>  
+          </table>
+          <table class="table ps_details">
+            <tr>
+              <th>Passenger Details</th>
+              <th>Ticket Id</th>
+              <th>Seat No</th>
+              <th>Total Fare</th>
+              
+            </tr>
+            <tr>
+              <td><b>{{ticket.user.firstName+" "+ticket.user.lastName}}</b> <br>
+                <span>{{ticket.user.email}}</span> <br>
+                <span>{{ticket.user.contactNumber}}</span>
+              </td>
+  
+              <td>{{ticket.ticketId}}</td>
+              <td >
+               <span  >{{ticket.seatNumbers}}</span> 
+              </td>
+              <td>{{ticket.fare}} </td>
+            </tr>
+          </table>
+          <table class="table ps_details ">
+            <tr>
+              <th>Bus Name</th>
+              <th>Bus Number</th>
+              <th>Reporting Time </th>
+              <th>Departure Date & Time</th>
+              
+            </tr>
+            <tr>
+              <td>{{ticket.timetable.bus.busName}}<br>
+              <span> <em>Bus Type: </em>{{ticket.timetable.bus.busTypeRate.typeName}} </span>
+              </td>
+              <td>{{ticket.timetable.bus.busNo}}</td>
+              <td>Before 30 minutes</td>
+              <td>{{ticket.timetable.departureDateTime| date:'medium'}}</td>
+            </tr>
+          </table>
+      </div>
+      <div class="row">
+        <p style="color:red">** Please Bring This Copy To Ticket Counter To Collect Your Ticket </p>
+      </div>
+    </div>
+  </div>
+  <div class="doNotPrint">
+    <button (click)="printPage()" style="margin-left: 50%">Print</button>
+  </div>
